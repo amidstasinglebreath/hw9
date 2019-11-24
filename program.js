@@ -5,10 +5,11 @@ const Engineer = require("./classes/engineer");
 const Intern = require("./classes/intern");
 const Manager = require("./classes/manager");
 
-const startHTML = generateHTML.startHTML();
-const fillHTML = generateHTML.fillHTML();
-const endHTML = generateHTML.endHTML();
-
+/*
+function startHTML() = generateHTML.startHTML();
+function fillHTML() = generateHTML.fillHTML();
+function endHTML() = generateHTML.endHTML();
+*/
 
 const inquirer = require("inquirer");
 const team = [];
@@ -147,7 +148,7 @@ function renderHTML(data) {
     console.log(data);
 
     //begins file
-    fs.writeFile('index.html', startHTML(), (err) => {
+    fs.writeFile('index.html', generateHTML.startHTML(), (err) => {
         if (err) throw err;
 
         console.log("file created");
@@ -157,7 +158,7 @@ function renderHTML(data) {
     addEmployees(team);
 
     //ends html
-    fs.writeFile('index.html', endHTML(), (err) => {
+    fs.writeFile('index.html', generateHTML.endHTML(), (err) => {
         if (err) throw err;
 
         console.log("file not finished");
@@ -167,7 +168,7 @@ function renderHTML(data) {
 
 function addEmployees(data) {
     for (let i = 0; i < data.length; i++){
-        let nextEmp = fillHTML(data[i]);
+        let nextEmp = generateHTML.fillHTML(data[i]);
         fs.appendFile('index.html',nextEmp);
     }
 }
