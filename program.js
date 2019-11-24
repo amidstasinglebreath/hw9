@@ -12,7 +12,7 @@ const endHTML = generateHTML.endHTML;
 
 const inquirer = require("inquirer");
 const team = [];
-var finished = false;
+//var finished = false;
 
 async function getManagerInfo() {
     try {
@@ -86,6 +86,7 @@ async function getEmployeeinfo(title) {
 
             const emp = new Intern(name.name, id.id, email.Email, school.school);
             team.push(emp);
+            newMember();
 
         }
         catch (err) {
@@ -119,6 +120,7 @@ async function getEmployeeinfo(title) {
 
             const emp = new Engineer(name.name, id.id, email.Email, gitHub.username);
             team.push(emp);
+            newMember();
 
         }
         catch (err) {
@@ -172,9 +174,7 @@ function mainProgram() {
     getManagerInfo();
 
     //loops in the newmember prompt set
-    while (!finished){
-        newMember();
-    }
+    newMember();
 
     renderHTML();
 }

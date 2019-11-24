@@ -6,7 +6,8 @@ Purpose: create a command line application that dynamically generates html conte
  - 
 
 Dev notes/issues:
- - 
+ - while loop somehow failed await command, rapid display resulted in terminal crash
+ - switch to a sequential display/query
  - 
 
 # Original design specifications:
