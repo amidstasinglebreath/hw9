@@ -8,7 +8,8 @@ Purpose: create a command line application that dynamically generates html conte
 Dev notes/issues:
  - while loop somehow failed await command, rapid display resulted in terminal crash
  - switch to a sequential display/query
- - 
+ - problems with scope and information passing resolved
+ - having difficulty passing multiple functions from generateHTML file
 
 # Original design specifications:
      The user can input any number of team members, and they may be a mix of engineers and interns. This assignment must also pass all unit tests. When the user has completed building the team, the application will create an HTML file that displYou will build a software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team membays a nicely formatted team roster based on the information provided by the user. Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), we can frame this challenge as follows:

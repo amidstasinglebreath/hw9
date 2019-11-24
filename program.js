@@ -5,9 +5,9 @@ const Engineer = require("./classes/engineer");
 const Intern = require("./classes/intern");
 const Manager = require("./classes/manager");
 
-const startHTML = generateHTML.startHTML;
-const fillHTML = generateHTML.fillHTML;
-const endHTML = generateHTML.endHTML;
+const startHTML = generateHTML.startHTML();
+const fillHTML = generateHTML.fillHTML();
+const endHTML = generateHTML.endHTML();
 
 
 const inquirer = require("inquirer");
