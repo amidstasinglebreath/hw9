@@ -36,6 +36,7 @@ async function getManagerInfo() {
         });
         const mang = new Manager(name.name, id.id, email.Email, offNum.num);
         team.push(mang);
+        newMember();
 
     }
     catch (err) {
@@ -131,8 +132,9 @@ async function getEmployeeinfo(title) {
     else if (title === "I am done adding team members") {
         console.log("done" + title);
         //exits from holding loop
-        finished = true;
-        console.log("Done adding team members...")
+        //finished = true;
+        console.log("Done adding team members...");
+        renderHTML(team);
     }
     else {
         console.log("fail" + title);
@@ -141,7 +143,7 @@ async function getEmployeeinfo(title) {
     };
 };
 
-function renderHTML() {
+function renderHTML(data) {
     console.log(data);
 
     //begins file
@@ -170,13 +172,4 @@ function addEmployees(data) {
     }
 }
 
-function mainProgram() {
-    getManagerInfo();
-
-    //loops in the newmember prompt set
-    newMember();
-
-    renderHTML();
-}
-
-mainProgram();
+getManagerInfo();
